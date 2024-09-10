@@ -1,0 +1,4 @@
+Vadimus: Hanover, Frankfurt, Warsaw, Gdansk, Krakow, Berlin
+Georgi: New York, Bardo, Chicago, LA, Leon, Paris
+Bob: Rivne, Dnipro, Kyiv
+Olaf: Warsaw, Gdansk, Opole

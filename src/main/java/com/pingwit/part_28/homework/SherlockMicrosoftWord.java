@@ -51,8 +51,8 @@ public class SherlockMicrosoftWord {
         XWPFRun imageRun = imageParagraph.createRun();
         imageRun.addPicture(
                 Files.newInputStream(imagePath),
-                XWPFDocument.PICTURE_TYPE_JPEG, imagePath.toFile().getName(),
-                Units.toEMU(200), Units.toEMU(200)
+                XWPFDocument.PICTURE_TYPE_PNG, imagePath.toFile().getName(),
+                Units.toEMU(100), Units.toEMU(100)
         );
 
     }
