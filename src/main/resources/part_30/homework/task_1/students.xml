@@ -1,0 +1,26 @@
+<students>
+    <student>
+        <group>101</group>
+        <name>Ivan</name>
+        <surname>Ivanov</surname>
+        <faculty>Java developer</faculty>
+    </student>
+    <student>
+        <group>102</group>
+        <name>Maria</name>
+        <surname>Petrova</surname>
+        <faculty>Mathematics</faculty>
+    </student>
+    <student>
+        <group>103</group>
+        <name>Sergey</name>
+        <surname>Sidorov</surname>
+        <faculty>Physics</faculty>
+    </student>
+    <student>
+        <group>104</group>
+        <name>Anna</name>
+        <surname>Smirnova</surname>
+        <faculty>Chemistry</faculty>
+    </student>
+</students>
