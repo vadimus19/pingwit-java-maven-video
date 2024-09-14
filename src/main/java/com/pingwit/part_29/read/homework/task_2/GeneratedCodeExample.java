@@ -4,6 +4,7 @@ import org.passay.CharacterRule;
 import org.passay.EnglishCharacterData;
 import org.passay.PasswordGenerator;
 
+// интересный вариант, но скорее всего не будет работать в реальных программах, т.к. в пароле содержатся альтернативные символы, которые зачастую запрещены
 public class GeneratedCodeExample {
     public static void main(String[] args) {
         PasswordGenerator passwordGenerator = new PasswordGenerator();

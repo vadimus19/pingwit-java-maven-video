@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.pingwit</groupId>
-  <artifactId>pingwit-java-maven-video</artifactId>
+  <artifactId>vadym-danylchenko-pingwit-java-maven-video</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
