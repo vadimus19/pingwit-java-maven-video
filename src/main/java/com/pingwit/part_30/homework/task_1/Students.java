@@ -2,19 +2,23 @@ package com.pingwit.part_30.homework.task_1;
 
 import java.util.Objects;
 
+/*
+1. Название класса в ед. числе
+2. Этот класс поход на дубликат Student из этого же пакета. Выбери один, а второй лучше удали.
+ */
 public class Students {
     private String name;
     private String surname;
     private String faculty;
 
-
-    public Students(String name, String surname, String faculty) {
+// лишняя строка, удали
+    public Students(String name, String surname, String faculty) { // этот конструктор не используется, можно удалить
         this.name = name;
         this.surname = surname;
         this.faculty = faculty;
     }
 
-    public Students() {
+    public Students() { // если удалишь конструктор выше, то этот тоже можно
 
     }
 
