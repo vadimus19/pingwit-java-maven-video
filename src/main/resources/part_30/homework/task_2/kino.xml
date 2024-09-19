@@ -1,0 +1,19 @@
+<movies>
+    <movie>
+        <title>Дэдпул и Россомаха (2024)</title>
+        <genre>
+            <item>Новинки</item>
+            <item>Фильмы</item>
+            <item>Боевик</item>
+            <item>Комедия</item>
+            <item>Фантастика</item>
+        </genre>
+        <premiere>Неизвестно</premiere>
+        <quality>TS 720</quality>
+        <ratings>
+            <kp>7.7</kp>
+            <imdb>8.1</imdb>
+        </ratings>
+        <description>Продолжение истории о бесстрашном, но жутко болтливом супергерое...</description>
+    </movie>
+</movies>

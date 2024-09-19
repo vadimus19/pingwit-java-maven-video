@@ -20,7 +20,7 @@ public class StudentsParser {
 
         InputStream resource = ClassLoader.getSystemResourceAsStream("part_30/homework/task_1/students.xml");
         Document document = documentBuilder.parse(resource);
-        List<Students> studentsList = new ArrayList<>(); // students
+        List<Students> studentsList = new ArrayList<>();
         NodeList nodeList = document.getDocumentElement().getChildNodes();
         for (int i = 0; i < nodeList.getLength(); i++) {
             Node node = nodeList.item(i);
@@ -49,8 +49,8 @@ public class StudentsParser {
         System.out.println("====");
 
 
-        XmlMapper xmlMapper = new XmlMapper(); // если хочешь два варианта парсинга, то лучше делать это в разных классах с методом main
-        InputStream resource2 = ClassLoader.getSystemResourceAsStream("part_30/homework/task_1/students.xml");
+        XmlMapper xmlMapper = new XmlMapper();
+        InputStream resource2  = ClassLoader.getSystemResourceAsStream("part_30/homework/task_1/students.xml");
 
         List<Student> student = xmlMapper.readValue(resource2, new TypeReference<>() {
         });

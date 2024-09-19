@@ -18,7 +18,6 @@ public class AtmMain {
 
         for (Atm atm : atms) {
             System.out.println(atm);
-// лишняя строка, удали
         }
     }
 }
