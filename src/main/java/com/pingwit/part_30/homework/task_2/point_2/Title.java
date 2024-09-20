@@ -7,8 +7,7 @@ public class Title {
     private  String h2;
 
     public Title() {
-        this.id = id;
-        this.h2 = h2;
+
     }
 
     public Long getId() {
@@ -32,7 +31,7 @@ public class Title {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Title title = (Title) o;
-        return id.equals(title.id) && h2.equals(title.h2);
+        return Objects.equals(id, title.id) && Objects.equals(h2, title.h2);
     }
 
     @Override

@@ -17,6 +17,7 @@ import java.util.List;
 
 public class MovieMain {
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException {
+
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder documentBuilder = factory.newDocumentBuilder();
 
@@ -30,32 +31,31 @@ public class MovieMain {
         for (int i = 0; i < nodeList.getLength(); i++) {
             Node node = nodeList.item(i);
 
-            if (node instanceof Element){
+            if (node instanceof Element) {
                 Title title = new Title();
 
-                String id =  node.getAttributes().getNamedItem("id").getNodeValue();
-                title.setId(Long.valueOf(id));
+                if (node.getAttributes().getNamedItem("id") != null) {
+                    String id = node.getAttributes().getNamedItem("id").getNodeValue();
+                    title.setId(Long.valueOf(id));
+                }
 
                 NodeList childNodes = node.getChildNodes();
-
                 for (int j = 0; j < childNodes.getLength(); j++) {
                     Node cNode = childNodes.item(j);
 
-                    if (cNode instanceof Element){
-                        String content = cNode.getLastChild().getTextContent().trim();
+                    if (cNode instanceof Element) {
 
-                        switch (cNode.getNodeName()){
-                            case "h2" ->title.setH2(content);
+                        String content = cNode.getTextContent().trim();
+
+                        switch (cNode.getNodeName()) {
+                            case "h2" -> title.setH2(content);
                         }
                     }
-
                 }
                 titles.add(title);
             }
-
         }
+
         titles.forEach(System.out::println);
-
-
     }
 }
