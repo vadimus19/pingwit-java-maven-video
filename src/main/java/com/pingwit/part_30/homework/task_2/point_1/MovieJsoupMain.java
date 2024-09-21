@@ -10,6 +10,9 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+мне нравится идея с jsoup парсером, можешь ее дальше развивать, чтобы распарсить всю информацию о фильме
+ */
 public class MovieJsoupMain {
     public static void main(String[] args) throws IOException {
 
