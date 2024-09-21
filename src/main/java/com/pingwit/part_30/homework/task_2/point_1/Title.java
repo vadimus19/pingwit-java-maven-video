@@ -1,8 +1,11 @@
 package com.pingwit.part_30.homework.task_2.point_1;
 
-public class Title {
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class Title { // Мы данные фильма парсим, может будет правильнее назвать класс Film?
     private Long id;
-    private String h2;
+//    @JsonProperty("h2") - добавь эту аннотацию, чтобы парсер понял какой xml тег на какое поле мачить
+    private String h2; // неважно какая структура документа, который ты парсишь, поля необходимо называть соот-но информации, которую они хранят, в твоем случае это filmName.
 
     public Long getId() {
         return id;

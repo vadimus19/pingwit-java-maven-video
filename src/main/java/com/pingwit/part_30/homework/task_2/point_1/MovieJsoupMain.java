@@ -24,7 +24,7 @@ public class MovieJsoupMain {
         for (Element h2Element : h2Elements) {
             Title title = new Title();
 
-            if (h2Element.hasAttr("id")) {
+            if (h2Element.hasAttr("id")) { // у тега h2 технически может быть аттрибут id, но конкретно в твоем случае он отсутствует, этот if можно удалять
                 title.setId(Long.valueOf(h2Element.attr("id")));
             }
 

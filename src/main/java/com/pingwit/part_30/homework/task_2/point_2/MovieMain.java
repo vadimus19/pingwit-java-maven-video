@@ -15,6 +15,10 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+у тебя во время запуска тоже падает:
+The markup in the document preceding the root element must be well-formed. ?
+ */
 public class MovieMain {
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException {
 
