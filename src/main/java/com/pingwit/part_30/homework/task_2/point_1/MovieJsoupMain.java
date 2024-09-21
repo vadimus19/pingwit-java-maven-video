@@ -20,22 +20,20 @@ public class MovieJsoupMain {
 
         Document document = Jsoup.parse(resource, "UTF-8", "");
 
-        List<Title> titles = new ArrayList<>();
+        List<Film> films = new ArrayList<>();
 
-        Elements h2Elements = document.select("h2");
+        Elements filmElements = document.select(".shortstory");
 
-        for (Element h2Element : h2Elements) {
-            Title title = new Title();
+        for (Element elements : filmElements) {
+            Film film = new Film();
 
-            if (h2Element.hasAttr("id")) { // у тега h2 технически может быть аттрибут id, но конкретно в твоем случае он отсутствует, этот if можно удалять
-                title.setId(Long.valueOf(h2Element.attr("id")));
-            }
+            film.setMovieName(elements.text());
+            film.getDescription(elements.text());
+            film.getDescription(elements.text());
 
-            title.setH2(h2Element.text());
-
-            titles.add(title);
+            films.add(film);
         }
 
-        titles.forEach(System.out::println);
+        films.forEach(System.out::println);
     }
 }

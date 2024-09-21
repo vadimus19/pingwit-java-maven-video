@@ -20,12 +20,12 @@ public class StudentsParser {
 
         InputStream resource = ClassLoader.getSystemResourceAsStream("part_30/homework/task_1/students.xml");
         Document document = documentBuilder.parse(resource);
-        List<Students> studentsList = new ArrayList<>();
+        List<Student> studentsList = new ArrayList<>();
         NodeList nodeList = document.getDocumentElement().getChildNodes();
         for (int i = 0; i < nodeList.getLength(); i++) {
             Node node = nodeList.item(i);
             if (node instanceof Element) {
-                Students students = new Students();
+                Student students = new Student();
 
                 NodeList childNodes = node.getChildNodes();
 
