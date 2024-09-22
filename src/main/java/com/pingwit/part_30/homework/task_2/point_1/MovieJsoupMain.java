@@ -29,8 +29,12 @@ public class MovieJsoupMain {
 
             film.setMovieName(elements.text());
             film.getDescription(elements.text());
-            film.getDescription(elements.text());
+            film.getDescription(elements.text());// дубликат строки 31
 
+            /* у тебя elements.text() возвращает полное описание фильма с жанром и т.д.
+            и эта вся информация попадает в movieName, а description и другие поля остаются null (посмотри через debug)
+            Надо или подшаманить парсер или ты можешь распарсить строку, которую получил из elements.text()
+             */
             films.add(film);
         }
 

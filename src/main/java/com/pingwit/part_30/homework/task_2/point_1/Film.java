@@ -5,11 +5,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Film {
 
     @JsonProperty("h2")
-    private String movieName;
+    private String movieName; //
     @JsonProperty("b")
     private String description;
     @JsonProperty("excerpt")
-    private String excerpt;
+    private String excerpt; // что такое excerpt?
 
     public String getMovieName() {
         return movieName;
