@@ -19,7 +19,7 @@ public class Film {
         this.movieName = movieName;
     }
 
-    public String getDescription(String text) {
+    public String getDescription(String text) { // этот метод принимает аргумент и возвращает description никак его не изменяя, при этом это getter. Здесь явно что-то не так
         return description;
     }
 

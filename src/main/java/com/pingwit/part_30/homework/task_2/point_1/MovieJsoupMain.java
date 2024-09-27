@@ -28,7 +28,7 @@ public class MovieJsoupMain {
             Film film = new Film();
 
             film.setMovieName(elements.text());
-            film.getDescription(elements.text());
+            film.getDescription(elements.text()); //в 30 строке ты получаешь полное описание фильма и сетаешь его в название фильма. В этой строке ты пытаешься сделать тоже самое, только с ошибкой в методе getDescription. Зачем?
 
             films.add(film);
         }

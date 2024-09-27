@@ -1,5 +1,5 @@
 package com.pingwit.part_31.homework.task_2;
-
+// отформатируй код
 public class ToyRUsWarehouseMain {
     public static void main(String[] args) throws InterruptedException {
         ToyRUs toyRUs = new ToyRUs();
