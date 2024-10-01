@@ -1,6 +1,5 @@
 package com.pingwit.part_31.homework.task_3;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,7 +37,7 @@ public class FavoriteBookMain {
                 .toList();
 
         for (Map.Entry<Book, Integer> entry : topBooks) {
-            System.out.println(entry.getKey().title() + " (" + entry.getKey().year()+")" );
+            System.out.println(entry.getKey().title() + " (" + entry.getKey().year() + ")");
         }
     }
 

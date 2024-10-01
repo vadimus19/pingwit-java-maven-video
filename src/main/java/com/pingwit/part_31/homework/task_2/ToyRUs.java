@@ -3,7 +3,6 @@ package com.pingwit.part_31.homework.task_2;
 import java.util.ArrayList;
 import java.util.List;
 
-// отформатируй код
 class ToyRUs { // странное название класса, можешь объяснить почему его выбрал?
     private final List<String> toys = new ArrayList<>();
 

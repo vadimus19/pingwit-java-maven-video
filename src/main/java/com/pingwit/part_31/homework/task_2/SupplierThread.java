@@ -13,7 +13,7 @@ public class SupplierThread extends Thread {
 
     @Override
     public void run() {
-        shop.addToys(supplier, quantity); // будет более правильным цикл сделать внутри SupplierThread, чтобы эмулировать реальные поставки в магазин
+        shop.addToys(supplier, quantity);
         System.out.println(supplier + ": " + quantity);
     }
 }
