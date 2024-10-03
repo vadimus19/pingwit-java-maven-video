@@ -11,6 +11,7 @@ public class SupplierThread extends Thread {
         this.quantity = quantity;
     }
 
+
     @Override
     public void run() {
         shop.addToys(supplier, quantity);
