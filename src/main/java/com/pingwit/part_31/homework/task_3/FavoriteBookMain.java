@@ -23,7 +23,7 @@ public class FavoriteBookMain {
                 new Student("Tom", List.of(findBookById(books, 5), findBookById(books, 2)))
         );
 
-        Map<Book, Integer> bookCount = new HashMap<>();
+        Map<Book, Integer> bookCount = new HashMap<>(); // эту задачу хорошо бы решить на стримах, давай попробуем
         for (Student student : students) {
             for (Book book : student.favoriteBok()) {
                 bookCount.put(book, bookCount.getOrDefault(book, 0) + 1);
@@ -41,7 +41,7 @@ public class FavoriteBookMain {
         }
     }
 
-    private static Book findBookById(List<Book> books, int id) {
+    private static Book findBookById(List<Book> books, int id) { // а давай этот метод на стримы перепишем
         for (Book book : books) {
             if (book.id().equals(id)) {
                 return book;

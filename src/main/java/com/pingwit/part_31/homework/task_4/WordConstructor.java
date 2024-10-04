@@ -2,7 +2,7 @@ package com.pingwit.part_31.homework.task_4;
 
 import java.io.IOException;
 
-class WordConstructor implements Runnable {
+class WordConstructor implements Runnable { // WordConstructor - странное название класса, надо еще подумать над названием
 
     private final String filePath;
     private Integer wordCount;

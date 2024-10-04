@@ -9,9 +9,9 @@ public class CodeRefactor {
         WebsiteType type = website.getType();
 
         System.out.println(url);
-
+// лишняя строка, удали
         System.out.println(type);
-
+// лишняя строка, удали
     }
 
 }
