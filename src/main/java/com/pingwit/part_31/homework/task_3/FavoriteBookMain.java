@@ -1,8 +1,8 @@
 package com.pingwit.part_31.homework.task_3;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class FavoriteBookMain {
     public static void main(String[] args) {
@@ -23,30 +23,25 @@ public class FavoriteBookMain {
                 new Student("Tom", List.of(findBookById(books, 5), findBookById(books, 2)))
         );
 
-        Map<Book, Integer> bookCount = new HashMap<>(); // эту задачу хорошо бы решить на стримах, давай попробуем
-        for (Student student : students) {
-            for (Book book : student.favoriteBok()) {
-                bookCount.put(book, bookCount.getOrDefault(book, 0) + 1);
-            }
-        }
+        Map<Book, Long> bookCount = students.stream()
+                .flatMap(student -> student.favoriteBooks().stream())
+                .collect(Collectors.groupingBy(book -> book, Collectors.counting()));
 
         System.out.println("\nTop book:");
-        List<Map.Entry<Book, Integer>> topBooks = bookCount.entrySet().stream()
+        List<Map.Entry<Book, Long>> topBooks = bookCount.entrySet().stream()
                 .sorted((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()))
                 .limit(3)
                 .toList();
 
-        for (Map.Entry<Book, Integer> entry : topBooks) {
-            System.out.println(entry.getKey().title() + " (" + entry.getKey().year() + ")");
+        for (Map.Entry<Book, Long> entry : topBooks) {
+            System.out.println(entry.getKey().title() + " (" + entry.getKey().year() + ") — " + entry.getValue());
         }
     }
 
-    private static Book findBookById(List<Book> books, int id) { // а давай этот метод на стримы перепишем
-        for (Book book : books) {
-            if (book.id().equals(id)) {
-                return book;
-            }
-        }
-        return null;
+    private static Book findBookById(List<Book> books, int id) {
+        return books.stream()
+                .filter(book -> book.id().equals(id))
+                .findFirst()
+                .orElse(null);
     }
 }
