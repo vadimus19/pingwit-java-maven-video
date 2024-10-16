@@ -6,6 +6,6 @@ public class ThreadMain {
         ParallelThread parallelThread = new ParallelThread();
         parallelThread.join();
         System.out.println("Main thread finished");
-
+// лишняя строка, удали
     }
 }

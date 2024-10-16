@@ -3,6 +3,8 @@ package com.pingwit.part_31.homework.task_2;
 import java.util.ArrayList;
 import java.util.List;
 
+// ты когда переименовывал ToyRUs в ToysShop, то не использовал рефакторинг
+// поэтому сейчас верни прежнее название и затем через рефакторинг переименуй
 class ToysShop { // мы выяснили что ToyRUs это бренд, в таком случае, название класса все равно меняем на общее, например, ToysShop и можешь добавить поле name, которое будет хранить название магазина
     private final List<String> toys = new ArrayList<>();
 

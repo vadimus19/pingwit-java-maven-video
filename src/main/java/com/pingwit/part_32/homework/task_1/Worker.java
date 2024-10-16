@@ -7,9 +7,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Worker implements Callable<Integer> {
 
     private int id;
-    private Truck truck1;
+    private Truck truck1; // я думаю одного трака для воркера будет достаточно. Просто выбери в методе main коме какой передать
     private Truck truck2;
-    private static final Random rand = new Random();
+    private static final Random rand = new Random(); // константы должны быть в самом верху
     private AtomicInteger bagsUnloaded = new AtomicInteger(0);
     private double slowdownFactor;
 
@@ -17,7 +17,7 @@ public class Worker implements Callable<Integer> {
         this.id = id;
         this.truck1 = truck1;
         this.truck2 = truck2;
-        this.slowdownFactor = isSlow ? 1.5 : 1.0;
+        this.slowdownFactor = isSlow ? 1.5 : 1.0; // давай заменим boolean isSlow на double slowdownFactor, так можно будет передавать любое значение, а не только 1.0 или 1.5
     }
 
     @Override
@@ -42,7 +42,7 @@ public class Worker implements Callable<Integer> {
 
     private void simulateWork(double slowdownFactor) throws InterruptedException {
         int baseSleepTime = rand.nextInt(200);
-        Thread.sleep((int) (baseSleepTime * slowdownFactor));
+//        Thread.sleep((int) (baseSleepTime * slowdownFactor));
     }
 }
 

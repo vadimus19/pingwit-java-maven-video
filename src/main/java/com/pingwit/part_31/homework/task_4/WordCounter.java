@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class WordCounter {
-    public int wordsInFile(String filePath) throws IOException { // wordsInFile -> название метода это глагол, что делает данный метод - это и будет названием
+    public int wordsInFile(String filePath) throws IOException { // wordsInFile -> название метода это глагол, а у тебя пока существительное. Что делает данный метод? Это и будет названием
         int count = 0;
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
