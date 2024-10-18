@@ -9,9 +9,9 @@ public class Truck {
         this.bags = new AtomicInteger(bags);
     }
 
-    public boolean unloadBag(int workerId) { // int workerId не используется, если не надо, то удаляй
-        if (bags.get() > 0) { // вот здесь потенциальная ошибка, попробуй увеличить truck1Bags до 100_000 и позапускай несколько раз. Решение - этот метод целиком делать synchronized
-            int remainingBags = bags.decrementAndGet();
+    public synchronized boolean unloadBag(int workerId) { // int workerId не используется, если не надо, то удаляй
+        if (bags.get() > 0) {
+            bags.decrementAndGet();
             return true;
         }
         return false;

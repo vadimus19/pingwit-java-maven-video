@@ -3,6 +3,7 @@ package com.pingwit.part_31.homework.task_3;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class FavoriteBookMain {
@@ -26,11 +27,11 @@ public class FavoriteBookMain {
 
         Map<Book, Long> bookCount = students.stream()
                 .flatMap(student -> student.favoriteBooks().stream())
-                .collect(Collectors.groupingBy(book -> book, Collectors.counting())); // book -> book замени на Function.identity(), по сути делает тоже самое, просто будет приятнее выглядеть
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
         System.out.println("\nTop book:");
         List<Map.Entry<Book, Long>> topBooks = bookCount.entrySet().stream()
-                .sorted((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue())) // entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()) -> Map.Entry.comparingByValue()
+                .sorted((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()))
                 .limit(3)
                 .toList();
 

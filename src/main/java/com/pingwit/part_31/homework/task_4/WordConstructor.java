@@ -16,7 +16,7 @@ class WordConstructor implements Runnable { // WordConstructor - странно�
     @Override
     public void run() {
         try {
-            wordCount = wordCounter.wordsInFile(filePath);
+            wordCount = wordCounter.wordsInFileCounting(filePath);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

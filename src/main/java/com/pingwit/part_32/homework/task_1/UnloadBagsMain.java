@@ -1,8 +1,6 @@
 package com.pingwit.part_32.homework.task_1;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -12,30 +10,25 @@ import java.util.stream.Collectors;
 public class UnloadBagsMain {
     public static void main(String[] args) {
         int totalWorkers = 5;
-        int truck1Bags = 100000; // truck1, технически без разницы, но давай тренировать фантазию на название переменных, пример оставил ниже
-        int truck2Bags = 100000; // см комментарий выше
+        int scania = 100;
+        int mercedes = 100;
 
-        Truck truck1 = new Truck(truck1Bags); // truck1 -> scania
-        Truck truck2 = new Truck(truck2Bags); // truck2 -> mercedes
+        Truck truck1 = new Truck(scania);
+        Truck truck2 = new Truck(mercedes);
 
         ExecutorService executor = Executors.newFixedThreadPool(totalWorkers);
 
         List<Future<Integer>> results = new ArrayList<>();
-        Random rand = new Random(); // это поле не используется, удаляй
 
-        List<Boolean> slowWorker = new ArrayList<>();
-        for (int i = 0; i < totalWorkers; i++) { // в этом цикле создай 3 медленных работника и двух нормальных (можно даже не использовать цикл), затем снизу у тебя они перемешаются и все, останется только раздать работу
-            slowWorker.add(i < 3);
-// лишняя строка, удали
-        }
-        java.util.Collections.shuffle(slowWorker); // классный вариант, только убери java.util и сделай импорт
+        List<Double> slowdownFactors = Arrays.asList(1.5, 1.5, 1.5, 1.0, 1.0);
+        Collections.shuffle(slowdownFactors);
+
 
         for (int i = 0; i < totalWorkers; i++) {
 
-            Worker worker = new Worker(i, truck1, truck2, slowWorker.get(i));
+            Worker worker = new Worker(i, truck1, slowdownFactors.get(i));
             Future<Integer> result = executor.submit(worker);
             results.add(result);
-// лишняя строка, удали
         }
 
         int maxBagsUnloaded = 0;
