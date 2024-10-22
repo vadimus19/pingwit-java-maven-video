@@ -1,5 +1,7 @@
 package com.pingwit.part_33.homework.task_1;
 
+import java.util.concurrent.TimeUnit;
+
 public class BookingTicketMain {
     public static void main(String[] args) {
         TicketSystem ticketSystem = new TicketSystem();

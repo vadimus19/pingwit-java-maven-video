@@ -3,20 +3,13 @@ package com.pingwit.part_33.homework.task_2;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-
-public class VacationPlanner {
-    public static String readJSONFile(String filePath) throws IOException {
-        return new String(Files.readAllBytes(Paths.get(filePath)));
-    }
-
-    private static double calculateAverageDayTemperature(JSONObject day) {
-        double morningTemp = day.getDouble("morningTemp");
-        double dayTemp = day.getDouble("dayTemp");
-        double eveningTemp = day.getDouble("eveningTemp");
-        double nightTemp = day.getDouble("nightTemp");
+public class WeatherAnalyzer {
+    public static double calculateAverageDayTemperature(JSONObject day) {
+        JSONObject temperature = day.getJSONObject("temperature");
+        double morningTemp = temperature.getDouble("morning");
+        double dayTemp = temperature.getDouble("day");
+        double eveningTemp = temperature.getDouble("evening");
+        double nightTemp = temperature.getDouble("night");
         return (morningTemp + dayTemp + eveningTemp + nightTemp) / 4.0;
     }
 
@@ -41,10 +34,10 @@ public class VacationPlanner {
         }
 
         if (bestStartIndex != -1) {
-            System.out.println("The warm period begins on the day " + (bestStartIndex + 1) +
-                    " average temperature " + maxAverageTemp);
+            System.out.println("The warm period begins on day " + (bestStartIndex + 1) +
+                    " with an average temperature of " + maxAverageTemp);
         } else {
-            System.out.println("Could not find a period with a temperature higher " + minAvgTemp);
+            System.out.println("Could not find a period with a temperature higher than " + minAvgTemp);
         }
     }
 }
