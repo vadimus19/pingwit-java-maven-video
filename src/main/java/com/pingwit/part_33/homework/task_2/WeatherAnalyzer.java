@@ -4,7 +4,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class WeatherAnalyzer {
-    public static double calculateAverageDayTemperature(JSONObject day) {
+    public static double calculateAverageDayTemperature(JSONObject day) { // этот метод сделай приватным и не статическим
         JSONObject temperature = day.getJSONObject("temperature");
         double morningTemp = temperature.getDouble("morning");
         double dayTemp = temperature.getDouble("day");
@@ -13,7 +13,16 @@ public class WeatherAnalyzer {
         return (morningTemp + dayTemp + eveningTemp + nightTemp) / 4.0;
     }
 
-    public static void findWarmestPeriod(JSONArray forecast, int days, double minAvgTemp) {
+    public static void findWarmestPeriod(JSONArray forecast, int days, double minAvgTemp) { // пока это не так заметно, но лучше не использовать static в методах. Со временем ты поймешь где static подойдет, но это не тот случай
+        /*
+        идея хорошая, но что если таких периодов будет несколько?
+        Например с 1-8, 12-20 число? Я хочу знать все, чтобы подобрать наиболее удобный по датам.
+
+        Для этого возможно придется качать json с погодой к себе в проект и поиграться с данными в json.
+        Или с температурой на входе, чтобы четко было несколько периодов
+
+        Найденный период предлагаю хранить в мапе и достаточно будет одного прохода по всем дням месяца
+         */
         double maxAverageTemp = Double.MIN_VALUE;
         int bestStartIndex = -1;
 

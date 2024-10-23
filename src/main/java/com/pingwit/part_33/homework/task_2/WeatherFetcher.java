@@ -6,8 +6,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class WeatherFetcher {
-    public static String fetchJSONFromURL(String urlString) throws IOException {
+public class WeatherFetcher { // красавчик
+    public static String fetchJSONFromURL(String urlString) throws IOException { // urlString -> url - тип аргумента слева уже есть
         URL url = new URL(urlString);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
